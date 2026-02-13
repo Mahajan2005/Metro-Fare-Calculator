@@ -64,6 +64,22 @@
             border-radius: 5px;
             cursor: pointer;
         }
+        button:hover {
+            background-color: #074E68;
+            transition-duration: 20ms;
+            transition: 0.2s ease-in-out;
+        }
+        h3 {
+            text-align: center;
+            text-decoration: underline;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 12px;
+        }
+        #details {
+            font-size: 18px;
+            line-height: 1.5;
+            font-style: italic;
+        }
 
 
     </style>
@@ -83,6 +99,16 @@
 
     <label for="Age" class="input" > Age</label>
     <input type="number" placeholder="Age" class="inputText" id="Age">
+
+    <h3> Note </h3>
+    <p id="details"> Default ticket price: ₹200 <br>
+        Free ticket for age upto 5 <br>
+        50% discount for:
+        Age between 6 to 8 || 
+        Female passengers <br>
+        70% discount for senior citizens (age > 60) <br>
+        
+</p>
 
     <button onclick="calculateFare( )">Calculate Fare</button>
 
