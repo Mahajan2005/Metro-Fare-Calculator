@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #0C0D1A;
+            color: aliceblue;
+        }
+        h1 {
+            color: #C9FAFF;
+            font-size: 80px;
+            font-family:'Times New Roman', Times, serif;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 30px 20px;
+            font-size: 26px;
+            width: 50%;
+            align-self: center;
+
+
+        }
+        .Form  {
+            background: #0C0D1A33; /* 20% opacity */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            width: 858px;
+            aspect-ratio: 2/1;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        .input {
+            padding-left: 5px;
+            padding-bottom: 10px;
+            font-size: 30px;
+            text-align: left;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+        }
+        .inputText {
+            padding: 10px;
+            font-size: 16px;
+            width: 95%;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #052D42;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="Form">
+    <h1>Metro Ticket</h1>
+    <label for="name" class="input"> Name</label>
+    <input type="text" placeholder="Name"  class="inputText">
+
+    <label for="Gender" class="input"> Gender</label>
+    <select name="Gender" class="inputText" id="Gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+    </select>
+
+    <label for="Age" class="input" > Age</label>
+    <input type="number" placeholder="Age" class="inputText" id="Age">
+
+    <button onclick="calculateFare( )">Calculate Fare</button>
+
+    <h2 id="finalFare"> </h2>
+    </div>
+    
+
+
+
+
+    <script>
+        let metroTicket= 200;
+        function calculateFare( ) {
+            let gender = document.getElementById("Gender").value;
+            let age = document.getElementById("Age").value;
+            if (age <= 5) {
+                metroTicket = 0;
+            } else if (age > 5 && age <= 8 || gender === "Female") {
+                metroTicket = metroTicket / 2;
+            }
+            else if (age > 60) {
+                metroTicket = metroTicket * (30/100);
+            }
+            else {
+                metroTicket = 200;
+            }
+            document.querySelector('#finalFare').innerText = `Your Final fare is ${metroTicket}`;
+        }
+    </script>
+</body>
+</html>
